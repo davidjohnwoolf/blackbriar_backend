@@ -18,7 +18,7 @@ class UsersController < ApplicationController
       redirect_to '/'
     else
       flash[:alert] = 'Error Creating User'
-      redirect_to :new
+      redirect_to new_user_url
     end
   end
 
