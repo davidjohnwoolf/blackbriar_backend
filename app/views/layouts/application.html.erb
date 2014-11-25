@@ -9,6 +9,7 @@
 <body>
   <% if current_user %>
     <%= link_to 'Log Out', log_out_path, method: :delete %>
+    <%= link_to 'Edit User', edit_user_path(current_user) %>
   <% else %>
     <%= link_to 'Create User', new_user_path %>
     <%= link_to 'Log In', log_in_path %>
