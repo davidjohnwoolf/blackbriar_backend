@@ -1,6 +1,5 @@
 class User < ActiveRecord::Base
   attr_accessor :password
-
   before_save :encrypt_password
 
   validates_confirmation_of :password
