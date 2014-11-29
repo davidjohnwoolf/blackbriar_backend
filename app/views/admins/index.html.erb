@@ -1,0 +1,7 @@
+<h1>Admins</h1>
+
+<% @admins.each do |admin| %>
+  <h4><%= link_to admin.name, admin_path(admin.id) %></h4>
+  <%= admin.email %>
+  <br>
+<% end %>
