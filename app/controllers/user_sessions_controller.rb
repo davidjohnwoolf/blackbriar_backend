@@ -6,7 +6,7 @@ class UserSessionsController < ApplicationController
     if !session[:user_id] && !session[:admin_id]
       @user = User.authenticate(params[:email], params[:password])
       if @user
-        flash[:notice] = 'Successfully logged In'
+        flash[:notice] = 'Successfully logged in'
         session[:user_id] = @user.id
         redirect_to root_url
       else
@@ -14,7 +14,7 @@ class UserSessionsController < ApplicationController
         redirect_to log_in_url
       end
     else
-      flash[:alert] = 'Already Logged In'
+      flash[:alert] = 'Already logged in'
       redirect_to root_url
     end
   end
