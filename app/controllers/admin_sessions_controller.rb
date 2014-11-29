@@ -10,7 +10,7 @@ class AdminSessionsController < ApplicationController
       redirect_to '/'
     else
       flash[:alert] = 'Error logging in as Admin'
-      redirect_to log_in_path
+      redirect_to log_in_admin_path
     end
   end
 
