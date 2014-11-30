@@ -18,7 +18,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       flash[:notice] = 'User Created'
-      redirect_to '/'
+      redirect_to root_url
     else
       flash[:alert] = 'Error Creating User'
       redirect_to new_user_url
