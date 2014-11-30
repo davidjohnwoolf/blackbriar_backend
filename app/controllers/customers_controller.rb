@@ -14,7 +14,6 @@ class CustomersController < ApplicationController
 
   def create
     @customer = Customer.new(customer_params)
-    @customer.user_id = current_user.id
     if @customer.save
       flash[:notice] = 'Customer created'
       redirect_to customers_url
