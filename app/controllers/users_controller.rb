@@ -7,11 +7,11 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
-  def new
-    @user = User.new
+  def show
   end
 
-  def show
+  def new
+    @user = User.new
   end
 
   def create
