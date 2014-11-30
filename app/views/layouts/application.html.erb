@@ -25,6 +25,11 @@
     <%= link_to 'Log In', log_in_path %>
   <% end %>
 
+  <br>
+
+  <%= link_to 'Create Customer', new_customer_path %>
+  <%= link_to 'Customers', customers_path %>
+
   <% if flash[:notice] %>
     <div class="notice">
       <%= flash[:notice] %>
