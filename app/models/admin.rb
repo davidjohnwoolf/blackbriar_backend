@@ -2,10 +2,10 @@ class Admin < ActiveRecord::Base
   attr_accessor :password
   before_save :encrypt_password
 
-  validates :name, :presence => true, :uniqueness => true
-  validates :email, :presence => true, :uniqueness => true
-  validates :password, :presence => true, :confirmation => true
-  validates_length_of :password, :in => 6..20, :on => :create
+  validates :name, presence: true, uniqueness: true
+  validates :email, presence: true, uniqueness: true
+  validates :password, presence: true, confirmation: true
+  validates_length_of :password, in: 6..20, on: :create
 
   def encrypt_password
     self.password_salt = BCrypt::Engine.generate_salt
