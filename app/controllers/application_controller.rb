@@ -11,6 +11,24 @@ class ApplicationController < ActionController::Base
     @current_admin ||= Admin.find(session[:admin_id]) if session[:admin_id]
   end
 
+  def authenticate_user
+    if session[:user_id]
+      return true
+    else
+      flash[:alert] = 'You need to be logged in to view this'
+      redirect_to log_in_url
+    end
+  end
+
+  def authenticate_admin
+    if session[:admin_id]
+      return true
+    else
+      flash[:alert] = 'You cannot access this page'
+      redirect_to root_url
+    end
+  end
+
   helper_method :current_user
   helper_method :current_admin
 end

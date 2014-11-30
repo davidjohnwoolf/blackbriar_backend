@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_filter :authenticate_admin, only: [:new, :create, :destroy]
   before_action :find_user, only: [:show, :edit, :update, :destroy]
 
   def index
