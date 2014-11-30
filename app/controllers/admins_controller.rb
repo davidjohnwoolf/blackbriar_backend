@@ -17,7 +17,7 @@ class AdminsController < ApplicationController
     @admin = Admin.new(admin_params)
     if @admin.save
       flash[:notice] = 'Admin Created'
-      redirect_to '/'
+      redirect_to root_url
     else
       flash[:alert] = 'Error Creating Admin'
       redirect_to new_admin_url
