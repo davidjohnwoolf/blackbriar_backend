@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
   end
 
   def authenticate_user
-    if session[:user_id]
+    if session[:user_id] || session[:admin_id]
       return true
     else
       flash[:alert] = 'You need to be logged in to view this'
