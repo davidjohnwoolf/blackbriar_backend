@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   resources :users
   resources :admins
+  resources :customers
 
   get '/log-in' => 'user_sessions#new', as: :log_in
   post '/log-in' => 'user_sessions#create'
