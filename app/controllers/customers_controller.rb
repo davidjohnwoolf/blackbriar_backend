@@ -14,7 +14,6 @@ class CustomersController < ApplicationController
 
   def create
     @customer = Customer.new(customer_params)
-    @customer.user_id = current_user.id
     if @customer.save
       flash[:notice] = 'Customer created'
       redirect_to customers_url
@@ -47,7 +46,7 @@ class CustomersController < ApplicationController
   end
 
   def customer_params
-    params.require(:customer).permit(:name, :install_date, :mmr, :sixty_month, :eft, :activation)
+    params.require(:customer).permit(:name, :install_date, :mmr, :sixty_month, :eft, :activation, :user_id)
   end
 
 end
