@@ -26,6 +26,7 @@
     <%= link_to 'Customers', customers_path %>
   <% else %>
     <%= link_to 'Log In', log_in_path %>
+    <%= link_to 'Admin Login', log_in_admin_path %>
   <% end %>
 
   <% if flash[:notice] %>
