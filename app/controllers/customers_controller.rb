@@ -1,4 +1,6 @@
 class CustomersController < ApplicationController
+  before_filter :authenticate_user, only: [:index, :show]
+  before_filter :authenticate_admin, only: [:new, :create, :destroy]
   before_action :find_customer, only: [:show, :edit, :update, :destroy]
 
   def index
