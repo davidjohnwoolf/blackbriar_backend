@@ -4,4 +4,5 @@ class Customer < ActiveRecord::Base
   validates :name, presence: true
   validates :install_date, presence: true
   validates :mmr, presence: true
+  validates :user_id, presence: true
 end
