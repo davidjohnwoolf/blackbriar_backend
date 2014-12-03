@@ -29,11 +29,6 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def list_users
-    @users = User.all
-  end
-
   helper_method :current_user
   helper_method :current_admin
-  helper_method :list_users
 end
