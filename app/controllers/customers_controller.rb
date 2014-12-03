@@ -30,8 +30,10 @@ class CustomersController < ApplicationController
 
   def update
     if @customer.update_attributes(customer_params)
+      flash[:notice] = 'Customer updated'
       redirect_to customer_url
     else
+      flash[:alert] = 'Error updating customer'
       render :edit
     end
   end
