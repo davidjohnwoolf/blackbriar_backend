@@ -33,7 +33,7 @@
 
   <div>
     <%= label_tag :users_name %>
-    <%= text_field_tag :users_name %>
+    <%= select_tag :users_name, options_for_select(list_users.collect { |u| [u.name] }) %>
   </div>
 
   <%= f.submit 'Create Customer' %>

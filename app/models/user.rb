@@ -20,4 +20,10 @@ class User < ActiveRecord::Base
       nil
     end
   end
+
+  def self.options_for_list(users)
+    users.map do |u|
+      [ u.name ]
+    end
+  end
 end

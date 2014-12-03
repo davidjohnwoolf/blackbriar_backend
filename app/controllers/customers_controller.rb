@@ -16,6 +16,7 @@ class CustomersController < ApplicationController
 
   def create
     @customer = Customer.new(customer_params)
+    @users = User.all
     if params[:users_name]
       user = User.find_by(name: params[:users_name])
       @customer.user_id = user.id unless user.nil?
