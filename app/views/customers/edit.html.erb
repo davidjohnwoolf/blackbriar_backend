@@ -32,8 +32,8 @@
   </div>
 
   <div>
-    <%= label_tag :users_name %>
-    <%= select_tag :users_name, options_for_select(list_users.collect { |u| [u.name] }) %>
+    <%= f.label :user_id %>
+    <%= f.collection_select :user_id, User.all, :id, :name %>
   </div>
 
   <%= f.submit 'Update Customer' %>
