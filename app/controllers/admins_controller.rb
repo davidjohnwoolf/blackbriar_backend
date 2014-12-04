@@ -16,10 +16,10 @@ class AdminsController < ApplicationController
   def create
     @admin = Admin.new(admin_params)
     if @admin.save
-      flash[:notice] = 'Admin Created'
+      flash[:notice] = 'Admin created'
       redirect_to root_url
     else
-      flash[:alert] = 'Error Creating Admin'
+      flash[:alert] = 'Error creating admin'
       redirect_to new_admin_url
     end
   end
@@ -29,14 +29,17 @@ class AdminsController < ApplicationController
 
   def update
     if @admin.update_attributes(admin_params)
+      flash[:notice] = 'Admin updated'
       redirect_to admin_url
     else
+      flash[:alert] = 'Error updating admin'
       render :edit
     end
   end
 
   def destroy
     @admin.destroy
+    flash[:notice] = 'Admin deleted'
     redirect_to admins_url
   end
 

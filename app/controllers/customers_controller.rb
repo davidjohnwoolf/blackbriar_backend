@@ -40,6 +40,7 @@ class CustomersController < ApplicationController
 
   def destroy
     @customer.destroy
+    flash[:notice] = 'Customer deleted'
     redirect_to customers_url
   end
 
