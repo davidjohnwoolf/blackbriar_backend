@@ -21,9 +21,4 @@ class User < ActiveRecord::Base
     end
   end
 
-  def self.options_for_list(users)
-    users.map do |u|
-      [ u.name ]
-    end
-  end
 end
