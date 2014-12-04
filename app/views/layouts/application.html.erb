@@ -20,10 +20,10 @@
     <%= link_to 'View Admin Profile', admin_path(current_admin) %>
     <%= link_to 'Create User', new_user_path %>
     <%= link_to 'Create Admin', new_admin_path %>
-    <%= link_to 'Admins', admins_path %>
-    <%= link_to 'Users', users_path %>
     <%= link_to 'Create Customer', new_customer_path %>
     <%= link_to 'Customers', customers_path %>
+    <%= link_to 'Admins', admins_path %>
+    <%= link_to 'Users', users_path %>
   <% else %>
     <%= link_to 'Log In', log_in_path %>
     <%= link_to 'Admin Log In', log_in_admin_path %>
