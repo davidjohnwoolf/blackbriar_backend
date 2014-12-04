@@ -1,5 +1,8 @@
 class User < ActiveRecord::Base
+  has_many :customers
+
   attr_accessor :password
+  
   before_save :encrypt_password
 
   validates :name, presence: true, uniqueness: true
