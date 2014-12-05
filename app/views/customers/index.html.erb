@@ -1,6 +1,6 @@
 <h1>Customers</h1>
 <% if current_user %>
-  <% @customers.where("user_id = #{session[:user_id]}").each do |customer| %>
+  <% @customers.where(user_id: session[:user_id]).each do |customer| %>
     <h4><%= link_to customer.name, customer_path(customer.id) %></h4>
     <%= customer.mmr %>
     <%= customer.eft %>
