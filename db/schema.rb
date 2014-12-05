@@ -27,12 +27,22 @@ ActiveRecord::Schema.define(version: 20141130202916) do
 
   create_table "customers", force: true do |t|
     t.integer  "user_id"
-    t.string   "name",                         null: false
-    t.date     "install_date",                 null: false
-    t.decimal  "mmr",                          null: false
-    t.boolean  "sixty_month",  default: false
-    t.boolean  "eft",          default: false
-    t.boolean  "activation",   default: false
+    t.string   "name",                           null: false
+    t.string   "address",                        null: false
+    t.string   "city",                           null: false
+    t.string   "state",                          null: false
+    t.string   "zip",                            null: false
+    t.string   "phone",                          null: false
+    t.string   "credit_grade",                   null: false
+    t.string   "tech_name",                      null: false
+    t.string   "package",                        null: false
+    t.decimal  "mmr",                            null: false
+    t.date     "date_sold",                      null: false
+    t.date     "date_installed",                 null: false
+    t.boolean  "sixty_month",    default: false
+    t.boolean  "eft",            default: false
+    t.boolean  "activation",     default: false
+    t.boolean  "takeover",       default: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
