@@ -1,7 +1,9 @@
 <h1><%= @user.name %></h1>
 
 <h4>Email: <%= @user.email %></h4>
-<h4>EFT Percent: <%= @user.eft_percent %></h4>
+<h4>EFT Percent: <%= @user.customers.where(user_id: @user.id).where(eft: true).count * 100 / @user.customers.count %></h4>
+<h4>Sixty Month Percent: <%= @user.customers.where(user_id: @user.id).where(sixty_month: true).count * 100 / @user.customers.count %></h4>
+<h4>Activation Percent: <%= @user.customers.where(user_id: @user.id).where(activation: true).count * 100 / @user.customers.count %></h4>
 
 <% if session[:admin_id] %>
   <%= link_to 'Delete User', user_path(@user.id), method: :delete, data: {confirm: "Are you sure?"}  %>
