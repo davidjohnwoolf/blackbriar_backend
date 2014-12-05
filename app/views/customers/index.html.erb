@@ -3,6 +3,7 @@
   <% @customers.where("user_id = #{session[:user_id]}").each do |customer| %>
     <h4><%= link_to customer.name, customer_path(customer.id) %></h4>
     <%= customer.mmr %>
+    <%= customer.eft %>
   <% end %>
 <% else %>
   <% @customers.each do |customer| %>
@@ -11,6 +12,3 @@
     <%= customer.eft %>
   <% end %>
 <% end %>
-
-<h4>Office EFT Percent:</h4>
-<%= Customer.where(eft: true).count * 100 / Customer.count %>
