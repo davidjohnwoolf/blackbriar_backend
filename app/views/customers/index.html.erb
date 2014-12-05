@@ -8,5 +8,9 @@
   <% @customers.each do |customer| %>
     <h4><%= link_to customer.name, customer_path(customer.id) %></h4>
     <%= customer.mmr %>
+    <%= customer.eft %>
   <% end %>
 <% end %>
+
+<p>Office EFT Percent:</p>
+<%= Customer.where(eft: true).count * 100 / Customer.count %>
