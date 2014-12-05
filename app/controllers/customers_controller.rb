@@ -51,7 +51,9 @@ class CustomersController < ApplicationController
   end
 
   def customer_params
-    params.require(:customer).permit(:name, :install_date, :mmr, :sixty_month, :eft, :activation, :user_id)
+    params.require(:customer).permit(:name, :address, :city, :state, :zip,
+      :phone, :credit_grade, :tech_name, :package, :mmr, :date_sold,
+      :date_installed, :sixty_month, :eft, :activation, :takeover, :user_id)
   end
 
 end
