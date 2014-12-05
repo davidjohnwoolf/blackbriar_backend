@@ -12,5 +12,5 @@
   <% end %>
 <% end %>
 
-<p>Office EFT Percent:</p>
+<h4>Office EFT Percent:</h4>
 <%= Customer.where(eft: true).count * 100 / Customer.count %>
