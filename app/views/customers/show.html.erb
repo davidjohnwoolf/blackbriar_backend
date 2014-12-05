@@ -1,24 +1,43 @@
 <h1><%= @customer.name %></h1>
 
-<p>Customer MMR: </p>
-<%= @customer.mmr %>
+<h4>Customer Address: </h4>
+<p><%= @customer.address %> <%= @customer.city %>, <%= @customer.state %> <%= @customer.zip %></p>
 
-<p>Customer Installed On: </p>
-<%= @customer.date_installed %>
+<h4>Customer Phone: </h4>
+<p><%= @customer.phone %></p>
 
-<p>Customer 60 Month: </p>
-<%= @customer.sixty_month %>
+<h4>Customer Credit Grade: </h4>
+<p><%= @customer.credit_grade %></p>
 
-<p>Customer EFT: </p>
-<%= @customer.eft %>
+<h4>Customer Tech: </h4>
+<p><%= @customer.tech_name %></p>
 
-<p>Customer Activation: </p>
-<%= @customer.activation %>
+<h4>Customer Package: </h4>
+<p><%= @customer.package %></p>
 
-<p>Customer User ID: </p>
-<%= @customer.user_id %>
+<h4>Customer MMR: </h4>
+<p><%= @customer.mmr %></p>
 
-<br>
+<h4>Customer Sold On: </h4>
+<p><%= @customer.date_sold %></p>
+
+<h4>Customer Installed On: </h4>
+<p><%= @customer.date_installed %></p>
+
+<h4>Customer 60 Month: </h4>
+<p><%= @customer.sixty_month %></p>
+
+<h4>Customer EFT: </h4>
+<p><%= @customer.eft %></p>
+
+<h4>Customer Activation: </h4>
+<p><%= @customer.activation %></p>
+
+<h4>Customer Takeover: </h4>
+<p><%= @customer.takeover %></p>
+
+<h4>Customer Sold By: </h4>
+<p><%= User.find(@customer.user_id).name %></p>
 
 <% if current_admin %>
   <%= link_to 'Delete Customer', customer_path(@customer.id), method: :delete, data: {confirm: "Are you sure?"}  %>
