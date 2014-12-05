@@ -5,7 +5,7 @@ class Admin < ActiveRecord::Base
   validates :name, presence: true, uniqueness: true
   validates :email, presence: true, uniqueness: true
   validates :password, presence: true, confirmation: true
-  validates_length_of :password, in: 6..20, on: :create
+  validates_length_of :password, in: 6..20
 
   def encrypt_password
     self.password_salt = BCrypt::Engine.generate_salt
