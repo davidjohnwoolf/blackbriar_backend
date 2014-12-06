@@ -6,11 +6,11 @@ class AdminsController < ApplicationController
     @admins = Admin.all
   end
 
-  def new
-    @admin = Admin.new
+  def show
   end
 
-  def show
+  def new
+    @admin = Admin.new
   end
 
   def create

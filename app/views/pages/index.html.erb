@@ -1,6 +1,7 @@
 <h1>Home</h1>
 
 <h2>Office Stats</h2>
+
 <% if Customer.count > 0 %>
   <h4>Office EFT Percent: <%= Customer.where(eft: true).count * 100 / Customer.count %></h4>
 

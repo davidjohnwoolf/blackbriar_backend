@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_filter :authenticate_user, only: [:index, :show]
+  before_filter :authenticate_user, only: [:index, :show, :edit, :update]
   before_filter :authenticate_admin, only: [:new, :create, :destroy]
   before_action :find_user, only: [:show, :edit, :update, :destroy]
 
@@ -17,10 +17,10 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      flash[:notice] = 'User Created'
+      flash[:notice] = 'User created'
       redirect_to root_url
     else
-      flash[:alert] = 'Error Creating User'
+      flash[:alert] = 'Error creating user'
       redirect_to new_user_url
     end
   end
@@ -30,10 +30,10 @@ class UsersController < ApplicationController
 
   def update
     if @user.update_attributes(user_params)
-      flash[:notice] = 'User Updated'
+      flash[:notice] = 'User updated'
       redirect_to user_url
     else
-      flash[:alert] = 'Error Updating User'
+      flash[:alert] = 'Error updating user'
       render :edit
     end
   end

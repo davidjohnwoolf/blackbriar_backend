@@ -1,9 +1,8 @@
 class User < ActiveRecord::Base
   has_many :customers
+  before_save :encrypt_password
 
   attr_accessor :password
-
-  before_save :encrypt_password
 
   validates :name, presence: true, uniqueness: true
   validates :email, presence: true, uniqueness: true
@@ -25,5 +24,4 @@ class User < ActiveRecord::Base
       nil
     end
   end
-
 end

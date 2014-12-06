@@ -1,6 +1,7 @@
 class Admin < ActiveRecord::Base
-  attr_accessor :password
   before_save :encrypt_password
+  
+  attr_accessor :password
 
   validates :name, presence: true, uniqueness: true
   validates :email, presence: true, uniqueness: true

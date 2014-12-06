@@ -1,6 +1,6 @@
 class CustomersController < ApplicationController
   before_filter :authenticate_user, only: [:index, :show]
-  before_filter :authenticate_admin, only: [:new, :create, :destroy]
+  before_filter :authenticate_admin, only: [:new, :create, :edit, :update, :destroy]
   before_action :find_customer, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -52,8 +52,7 @@ class CustomersController < ApplicationController
 
   def customer_params
     params.require(:customer).permit(:name, :address, :city, :state, :zip,
-      :phone, :credit_grade, :tech_name, :package, :mmr, :date_sold,
-      :date_installed, :sixty_month, :eft, :activation, :takeover, :user_id)
+    :phone, :credit_grade, :tech_name, :package, :mmr, :date_sold,
+    :date_installed, :sixty_month, :eft, :activation, :takeover, :user_id)
   end
-
 end
