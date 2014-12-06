@@ -10,6 +10,8 @@ class User < ActiveRecord::Base
   validates :password, presence: true, confirmation: true
   validates_length_of :password, in: 6..20
 
+  mount_uploader :profile_picture, ProfilePictureUploader
+
   def encrypt_password
     self.password_salt = BCrypt::Engine.generate_salt
     self.password_hash = BCrypt::Engine.hash_secret(password, password_salt)
