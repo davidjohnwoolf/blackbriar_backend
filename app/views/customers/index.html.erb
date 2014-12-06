@@ -1,10 +1,13 @@
 <h1>Customers</h1>
-<% if current_user %>
-  <% @customers.where(user_id: session[:user_id]).each do |customer| %>
-    <h4><%= link_to customer.name, customer_path(customer.id) %></h4>
+
+<ul>
+  <% if current_user %>
+    <% @customers.where(user_id: session[:user_id]).each do |customer| %>
+      <li><%= link_to customer.name, customer_path(customer.id) %></li>
+    <% end %>
+  <% else %>
+    <% @customers.each do |customer| %>
+      <li><%= link_to customer.name, customer_path(customer.id) %></li>
+    <% end %>
   <% end %>
-<% else %>
-  <% @customers.each do |customer| %>
-    <h4><%= link_to customer.name, customer_path(customer.id) %></h4>
-  <% end %>
-<% end %>
+</ul>
