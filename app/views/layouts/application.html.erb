@@ -25,8 +25,8 @@
             <li><%= link_to 'Log Out', log_out_path, method: :delete %></li>
             <li><%= link_to 'Edit Account', edit_user_path(current_user) %></li>
             <li><%= link_to 'View Profile', user_path(current_user) %></li>
-            <li><%= link_to 'Users', users_path %></li>
             <li><%= link_to 'Customers', customers_path %></li>
+            <li><%= link_to 'Users', users_path %></li>
           <% elsif current_admin %>
             <li><%= link_to 'Log Out Admin', log_out_admin_path, method: :delete %></li>
             <li><%= link_to 'Edit Admin Account', edit_admin_path(current_admin) %></li>
