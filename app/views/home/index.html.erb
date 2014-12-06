@@ -2,14 +2,10 @@
 
 <h2>Office Stats</h2>
 
-<h4>Office EFT Percent:</h4>
-<p><%= Customer.where(eft: true).count * 100 / Customer.count %></p>
+<h4>Office EFT Percent: <%= Customer.where(eft: true).count * 100 / Customer.count %></h4>
 
-<h4>Office 60 Month Percent:</h4>
-<p><%= Customer.where(sixty_month: true).count * 100 / Customer.count %></p>
+<h4>Office 60 Month Percent: <%= Customer.where(sixty_month: true).count * 100 / Customer.count %></h4>
 
-<h4>Office Activation Percent:</h4>
-<p><%= Customer.where(activation: true).count * 100 / Customer.count %></p>
+<h4>Office Activation Percent: <%= Customer.where(activation: true).count * 100 / Customer.count %></h4>
 
-<h4>Office Takeover Percent:</h4>
-<p><%= Customer.where(takeover: true).count * 100 / Customer.count %></p>
+<h4>Office Takeover Percent: <%= Customer.where(takeover: true).count * 100 / Customer.count %></h4>
