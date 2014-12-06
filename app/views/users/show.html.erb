@@ -1,6 +1,6 @@
 <h1><%= @user.name %></h1>
 
-<%= image_tag @user.profile_picture %>
+<%= image_tag @user.profile_picture.url, width: '200' %>
 
 <h4>Email</h4>
 <p><%= @user.email %></p>
