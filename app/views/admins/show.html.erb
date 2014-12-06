@@ -4,6 +4,6 @@
 <p><%= @admin.email %></p>
 
 <% unless current_admin == @admin %>
-  <%= link_to 'Delete Admin', admin_path(@admin.id), method: :delete, data: {confirm: "Are you sure?"}  %>
+  <%= link_to 'Delete Admin', admin_path(@admin.id), method: :delete, data: {confirm: "Are you sure?"}, class: 'button tiny alert' %>
 <% end %>
-<%= link_to 'Edit Admin', edit_admin_path(@admin.id) %>
+<%= link_to 'Edit Admin', edit_admin_path(@admin.id), class: 'button tiny' %>
