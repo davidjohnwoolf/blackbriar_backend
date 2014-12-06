@@ -8,7 +8,7 @@
 <% if @user.customers.count > 0 %>
   <h4>EFT Percent</h4>
   <p><%= @user.customers.where(user_id: @user.id).where(eft: true).count * 100 / @user.customers.count %></p>
-  <h4>Sixty Month Percent</h4>
+  <h4>60 Month Percent</h4>
   <p><%= @user.customers.where(user_id: @user.id).where(sixty_month: true).count * 100 / @user.customers.count %></p>
   <h4>Activation Percent</h4>
   <p><%= @user.customers.where(user_id: @user.id).where(activation: true).count * 100 / @user.customers.count %></p>
