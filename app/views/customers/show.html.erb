@@ -40,6 +40,6 @@
 <p><%= User.find(@customer.user_id).name %></p>
 
 <% if current_admin %>
-  <%= link_to 'Delete Customer', customer_path(@customer.id), method: :delete, data: {confirm: "Are you sure?"}  %>
+  <%= link_to 'Delete Customer', customer_path(@customer.id), method: :delete, data: {confirm: 'Are you sure?'}  %>
   <%= link_to 'Edit Customer', edit_customer_path(@customer.id) %>
 <% end %>
