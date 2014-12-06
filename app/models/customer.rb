@@ -13,9 +13,5 @@ class Customer < ActiveRecord::Base
   validates :mmr, presence: true
   validates :date_sold, presence: true
   validates :date_installed, presence: true
-  validates :sixty_month, presence: true
-  validates :eft, presence: true
-  validates :activation, presence: true
-  validates :takeover, presence: true
   validates :user_id, presence: true
 end
