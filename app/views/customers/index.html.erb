@@ -1,13 +1,13 @@
 <h1>Customers</h1>
 
-<ul>
   <% if current_user %>
-    <% @customers.where(user_id: session[:user_id]).each do |customer| %>
-      <li><%= link_to customer.name, customer_path(customer.id) %></li>
+    <% current_user.customers.each do |customer| %>
+      <h4><%= link_to customer.name, customer_path(customer.id) %></h4>
+      <p>Installed On: <%= customer.date_installed %></p>
     <% end %>
   <% else %>
     <% @customers.each do |customer| %>
-      <li><%= link_to customer.name, customer_path(customer.id) %></li>
+      <h4><%= link_to customer.name, customer_path(customer.id) %></h4>
+      <p>Installed On: <%= customer.date_installed %></p>
     <% end %>
   <% end %>
-</ul>
