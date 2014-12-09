@@ -19,12 +19,24 @@
       <p><%= @user.customers.where(takeover: true).count * 100 / @user.customers.count %>&#37;</p>
       <h4>Average MMR</h4>
       <p><%= @user.customers.average(:mmr).round(2) %></p>
+      <h4>Basic Package</h4>
+      <p><%= @user.customers.where(package: 'Basic').count * 100 / @user.customers.count %>&#37;</p>
+      <h4>Basic Image Package</h4>
+      <p><%= @user.customers.where(package: 'Basic Image').count * 100 / @user.customers.count %>&#37;</p>
+      <h4>Go Green Package</h4>
+      <p><%= @user.customers.where(package: 'Go Green').count * 100 / @user.customers.count %>&#37;</p>
+      <h4>Basic Automation Package</h4>
+      <p><%= @user.customers.where(package: 'Basic Automation').count * 100 / @user.customers.count %>&#37;</p>
+      <h4>Automation Plus Package</h4>
+      <p><%= @user.customers.where(package: 'Automation Plus').count * 100 / @user.customers.count %>&#37;</p>
+      <h4>Fort Knox Package</h4>
+      <p><%= @user.customers.where(package: 'Fort Knox').count * 100 / @user.customers.count %>&#37;</p>
     <% end %>
-
+  </div>
+  <div class="small-12 columns">
     <% if current_admin %>
       <%= link_to 'Delete User', user_path(@user.id), method: :delete, data: {confirm: 'Are you sure?'}, class: 'button tiny alert'  %>
       <%= link_to 'Edit User', edit_user_path(@user.id), class: 'button tiny' %>
     <% end %>
-
   </div>
 </div>
