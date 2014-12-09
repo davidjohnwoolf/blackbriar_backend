@@ -6,15 +6,19 @@
 
  */
 
-input {
-  max-width: 30em;
-}
-
-textarea {
+input, textarea, select {
   max-width: 30em;
 }
 
 ul {
   list-style-type: none;
   margin-left: 0;
+}
+
+.underline {
+  border-bottom: 2px #999 solid;
+}
+
+h4 {
+  font-weight: bold;
 }
