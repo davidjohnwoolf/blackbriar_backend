@@ -28,13 +28,13 @@
             <li><%= link_to 'Edit Account', edit_user_path(current_user) %></li>
             <li><%= link_to 'Log Out', log_out_path, method: :delete %></li>
           <% elsif current_admin %>
-            <li><%= link_to 'View Admin Profile', admin_path(current_admin) %></li>
+            <li><%= link_to 'Profile', admin_path(current_admin) %></li>
             <li><%= link_to 'Create User', new_user_path %></li>
             <li><%= link_to 'Create Customer', new_customer_path %></li>
             <li><%= link_to 'Customers', customers_path %></li>
             <li><%= link_to 'Users', users_path %></li>
-            <li><%= link_to 'Edit Admin Account', edit_admin_path(current_admin) %></li>
-            <li><%= link_to 'Log Out Admin', log_out_admin_path, method: :delete %></li>
+            <li><%= link_to 'Edit Account', edit_admin_path(current_admin) %></li>
+            <li><%= link_to 'Log Out', log_out_admin_path, method: :delete %></li>
           <% else %>
             <li><%= link_to 'Log In', log_in_path %></li>
             <li><%= link_to 'Admin Log In', log_in_admin_path %></li>
