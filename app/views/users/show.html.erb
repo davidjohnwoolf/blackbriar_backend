@@ -1,14 +1,31 @@
 <div class="row">
   <div class="small-12 columns">
-
-    <h1><%= @user.name %></h1>
+    <h1 class="underline"><%= @user.name %></h1>
+  </div>
+  <div class="small-12 medium-6 columns">
 
     <%= image_tag @user.profile_picture.url, width: '200' %>
 
-    <h4>Email</h4>
-    <p><%= @user.email %></p>
-
     <% if @user.customers.count > 0 %>
+
+      <h2 class="underline">Packages</h2>
+      <h4>Basic</h4>
+      <p><%= @user.customers.where(package: 'Basic').count * 100 / @user.customers.count %>&#37;</p>
+      <h4>Basic Image</h4>
+      <p><%= @user.customers.where(package: 'Basic Image').count * 100 / @user.customers.count %>&#37;</p>
+      <h4>Go Green</h4>
+      <p><%= @user.customers.where(package: 'Go Green').count * 100 / @user.customers.count %>&#37;</p>
+      <h4>Basic Automation</h4>
+      <p><%= @user.customers.where(package: 'Basic Automation').count * 100 / @user.customers.count %>&#37;</p>
+      <h4>Automation Plus</h4>
+      <p><%= @user.customers.where(package: 'Automation Plus').count * 100 / @user.customers.count %>&#37;</p>
+      <h4>Fort Knox</h4>
+      <p><%= @user.customers.where(package: 'Fort Knox').count * 100 / @user.customers.count %>&#37;</p>
+
+    </div>
+    <div class="small-12 medium-6 columns">
+
+      <h2 class="underline">Statistics</h2>
       <h4>EFT</h4>
       <p><%= @user.customers.where(eft: true).count * 100 / @user.customers.count %>&#37;</p>
       <h4>60 Month</h4>
@@ -19,31 +36,12 @@
       <p><%= @user.customers.where(takeover: true).count * 100 / @user.customers.count %>&#37;</p>
       <h4>Average MMR</h4>
       <p><%= @user.customers.average(:mmr).round(2) %></p>
-      <h4>Basic Package</h4>
-      <p><%= @user.customers.where(package: 'Basic').count * 100 / @user.customers.count %>&#37;</p>
-      <h4>Basic Image Package</h4>
-      <p><%= @user.customers.where(package: 'Basic Image').count * 100 / @user.customers.count %>&#37;</p>
-      <h4>Go Green Package</h4>
-      <p><%= @user.customers.where(package: 'Go Green').count * 100 / @user.customers.count %>&#37;</p>
-      <h4>Basic Automation Package</h4>
-      <p><%= @user.customers.where(package: 'Basic Automation').count * 100 / @user.customers.count %>&#37;</p>
-      <h4>Automation Plus Package</h4>
-      <p><%= @user.customers.where(package: 'Automation Plus').count * 100 / @user.customers.count %>&#37;</p>
-      <h4>Fort Knox Package</h4>
-      <p><%= @user.customers.where(package: 'Fort Knox').count * 100 / @user.customers.count %>&#37;</p>
-      <h4>A Credits</h4>
-      <p><%= @user.customers.where(credit_grade: 'A').count * 100 / @user.customers.count %>&#37;</p>
-      <h4>B Credits</h4>
-      <p><%= @user.customers.where(credit_grade: 'B').count * 100 / @user.customers.count %>&#37;</p>
-      <h4>C Credits</h4>
-      <p><%= @user.customers.where(credit_grade: 'C').count * 100 / @user.customers.count %>&#37;</p>
       <h4>Sales This Year</h4>
       <p><%= @user.customers.where('extract(year from date_installed) = ?', 2014).count %></p>
       <h4>Sales This Month</h4>
       <p><%= @user.customers.where('extract(month from date_installed) = ?', 12).count %></p>
+
     <% end %>
-  </div>
-  <div class="small-12 columns">
     <% if current_admin %>
       <%= link_to 'Delete User', user_path(@user.id), method: :delete, data: {confirm: 'Are you sure?'}, class: 'button tiny alert'  %>
       <%= link_to 'Edit User', edit_user_path(@user.id), class: 'button tiny' %>
