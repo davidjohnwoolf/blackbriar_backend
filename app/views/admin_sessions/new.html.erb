@@ -1,14 +1,18 @@
-<h1>Admin Log In</h1>
-<%= form_tag log_in_admin_path do %>
-  <div>
-    <%= label_tag :email %>
-    <%= email_field_tag :email %>
-  </div>
+<div class="row">
+  <div class="small-12 columns">
+    <h1>Admin Log In</h1>
+    <%= form_tag log_in_admin_path do %>
+      <div>
+        <%= label_tag :email %>
+        <%= email_field_tag :email %>
+      </div>
 
-  <div>
-    <%= label_tag :password %>
-    <%= password_field_tag :password %>
-  </div>
+      <div>
+        <%= label_tag :password %>
+        <%= password_field_tag :password %>
+      </div>
 
-  <%= submit_tag 'Log In Admin', class: 'button' %>
-<% end %>
+      <%= submit_tag 'Log In Admin', class: 'button' %>
+    <% end %>
+  </div>
+</div>
