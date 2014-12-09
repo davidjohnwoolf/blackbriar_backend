@@ -13,3 +13,16 @@
 .alert {
   color: red;
 }
+
+input {
+  max-width: 30em;
+}
+
+textarea {
+  max-width: 30em;
+}
+
+ul {
+  list-style-type: none;
+  margin-left: 0;
+}
