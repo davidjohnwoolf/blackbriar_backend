@@ -31,6 +31,16 @@
       <p><%= @user.customers.where(package: 'Automation Plus').count * 100 / @user.customers.count %>&#37;</p>
       <h4>Fort Knox Package</h4>
       <p><%= @user.customers.where(package: 'Fort Knox').count * 100 / @user.customers.count %>&#37;</p>
+      <h4>A Credits</h4>
+      <p><%= @user.customers.where(credit_grade: 'A').count * 100 / @user.customers.count %>&#37;</p>
+      <h4>B Credits</h4>
+      <p><%= @user.customers.where(credit_grade: 'B').count * 100 / @user.customers.count %>&#37;</p>
+      <h4>C Credits</h4>
+      <p><%= @user.customers.where(credit_grade: 'C').count * 100 / @user.customers.count %>&#37;</p>
+      <h4>Sales This Year</h4>
+      <p><%= @user.customers.where('extract(year from date_installed) = ?', 2014).count %></p>
+      <h4>Sales This Month</h4>
+      <p><%= @user.customers.where('extract(month from date_installed) = ?', 12).count %></p>
     <% end %>
   </div>
   <div class="small-12 columns">
