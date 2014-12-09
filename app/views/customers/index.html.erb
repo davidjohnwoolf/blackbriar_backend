@@ -2,15 +2,17 @@
   <div class="small-12 columns">
     <h1>Customers</h1>
     <dl>
-      <% if current_user %>
-        <% current_user.customers.each do |customer| %>
-          <dt><%= link_to customer.name, customer_path(customer.id) %></dt>
-          <dd>Installed On: <%= customer.date_installed %></dd>
-        <% end %>
-      <% else %>
-        <% @customers.each do |customer| %>
-          <dt><%= link_to customer.name, customer_path(customer.id) %></dt>
-          <dd>Installed On: <%= customer.date_installed %></dd>
+      <% if Customer.count > 0 %>
+        <% if current_user %>
+          <% current_user.customers.each do |customer| %>
+            <dt><%= link_to customer.name, customer_path(customer.id) %></dt>
+            <dd>Installed On: <%= customer.date_installed %></dd>
+          <% end %>
+        <% else %>
+          <% @customers.each do |customer| %>
+            <dt><%= link_to customer.name, customer_path(customer.id) %></dt>
+            <dd>Installed On: <%= customer.date_installed %></dd>
+          <% end %>
         <% end %>
       <% end %>
     </dl>
