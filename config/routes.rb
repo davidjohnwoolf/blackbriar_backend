@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root 'pages#index'
 
   resources :users
-  resources :admins
+  resources :admins, :only => [:show, :edit, :update]
   resources :customers
 
   get '/log_in' => 'user_sessions#new', as: :log_in

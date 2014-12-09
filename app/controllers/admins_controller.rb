@@ -2,10 +2,6 @@ class AdminsController < ApplicationController
   before_filter :authenticate_admin
   before_action :find_admin, only: [:show, :edit, :update, :destroy]
 
-  def index
-    @admins = Admin.all
-  end
-
   def show
   end
 
