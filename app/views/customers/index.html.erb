@@ -1,13 +1,17 @@
-<h1>Customers</h1>
+<div class="row">
+  <div class="small-12 columns">
+    <h1>Customers</h1>
 
-  <% if current_user %>
-    <% current_user.customers.each do |customer| %>
-      <h4><%= link_to customer.name, customer_path(customer.id) %></h4>
-      <p>Installed On: <%= customer.date_installed %></p>
+    <% if current_user %>
+      <% current_user.customers.each do |customer| %>
+        <h4><%= link_to customer.name, customer_path(customer.id) %></h4>
+        <p>Installed On: <%= customer.date_installed %></p>
+      <% end %>
+    <% else %>
+      <% @customers.each do |customer| %>
+        <h4><%= link_to customer.name, customer_path(customer.id) %></h4>
+        <p>Installed On: <%= customer.date_installed %></p>
+      <% end %>
     <% end %>
-  <% else %>
-    <% @customers.each do |customer| %>
-      <h4><%= link_to customer.name, customer_path(customer.id) %></h4>
-      <p>Installed On: <%= customer.date_installed %></p>
-    <% end %>
-  <% end %>
+  </div>
+</div>
