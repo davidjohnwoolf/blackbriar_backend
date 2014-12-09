@@ -24,7 +24,6 @@
       <h1>Sales Statistics</h1>
     </div>
     <div class="small-12 large-6 columns">
-      <% if Customer.count > 0 %>
         <h2><%= current_user.name %></h2>
         <% if current_user.customers.count > 0 %>
           <h4>EFT</h4>
@@ -62,80 +61,84 @@
         <% end %>
       </div>
       <div class="small-12 large-6 columns">
-        <h2>Blackbriar</h2>
-        <h4>EFT</h4>
-        <p><%= Customer.where(eft: true).count * 100 / Customer.count %>&#37;</p>
-        <h4>60 Month</h4>
-        <p><%= Customer.where(sixty_month: true).count * 100 / Customer.count %>&#37;</p>
-        <h4>Activation</h4>
-        <p><%= Customer.where(activation: true).count * 100 / Customer.count %>&#37;</p>
-        <h4>Takeover</h4>
-        <p><%= Customer.where(takeover: true).count * 100 / Customer.count %>&#37;</p>
-        <h4>Average MMR</h4>
-        <p><%= Customer.average(:mmr).round(2) %></p>
-        <h4>Basic Package</h4>
-        <p><%= Customer.where(package: 'Basic').count * 100 / Customer.count %>&#37;</p>
-        <h4>Basic Image Package</h4>
-        <p><%= Customer.where(package: 'Basic Image').count * 100 / Customer.count %>&#37;</p>
-        <h4>Go Green Package</h4>
-        <p><%= Customer.where(package: 'Go Green').count * 100 / Customer.count %>&#37;</p>
-        <h4>Basic Automation Package</h4>
-        <p><%= Customer.where(package: 'Basic Automation').count * 100 / Customer.count %>&#37;</p>
-        <h4>Automation Plus Package</h4>
-        <p><%= Customer.where(package: 'Automation Plus').count * 100 / Customer.count %>&#37;</p>
-        <h4>Fort Knox Package</h4>
-        <p><%= Customer.where(package: 'Fort Knox').count * 100 / Customer.count %>&#37;</p>
-        <h4>A Credits</h4>
-        <p><%= Customer.where(credit_grade: 'A').count * 100 / Customer.count %>&#37;</p>
-        <h4>B Credits</h4>
-        <p><%= Customer.where(credit_grade: 'B').count * 100 / Customer.count %>&#37;</p>
-        <h4>C Credits</h4>
-        <p><%= Customer.where(credit_grade: 'C').count * 100 / Customer.count %>&#37;</p>
-        <h4>Sales This Year</h4>
-        <p><%= Customer.where('extract(year from date_installed) = ?', 2014).count %></p>
-        <h4>Sales This Month</h4>
-        <p><%= Customer.where('extract(month from date_installed) = ?', 12).count %></p>
+        <% if Customer.count > 0 %>
+          <h2>Blackbriar</h2>
+          <h4>EFT</h4>
+          <p><%= Customer.where(eft: true).count * 100 / Customer.count %>&#37;</p>
+          <h4>60 Month</h4>
+          <p><%= Customer.where(sixty_month: true).count * 100 / Customer.count %>&#37;</p>
+          <h4>Activation</h4>
+          <p><%= Customer.where(activation: true).count * 100 / Customer.count %>&#37;</p>
+          <h4>Takeover</h4>
+          <p><%= Customer.where(takeover: true).count * 100 / Customer.count %>&#37;</p>
+          <h4>Average MMR</h4>
+          <p><%= Customer.average(:mmr).round(2) %></p>
+          <h4>Basic Package</h4>
+          <p><%= Customer.where(package: 'Basic').count * 100 / Customer.count %>&#37;</p>
+          <h4>Basic Image Package</h4>
+          <p><%= Customer.where(package: 'Basic Image').count * 100 / Customer.count %>&#37;</p>
+          <h4>Go Green Package</h4>
+          <p><%= Customer.where(package: 'Go Green').count * 100 / Customer.count %>&#37;</p>
+          <h4>Basic Automation Package</h4>
+          <p><%= Customer.where(package: 'Basic Automation').count * 100 / Customer.count %>&#37;</p>
+          <h4>Automation Plus Package</h4>
+          <p><%= Customer.where(package: 'Automation Plus').count * 100 / Customer.count %>&#37;</p>
+          <h4>Fort Knox Package</h4>
+          <p><%= Customer.where(package: 'Fort Knox').count * 100 / Customer.count %>&#37;</p>
+          <h4>A Credits</h4>
+          <p><%= Customer.where(credit_grade: 'A').count * 100 / Customer.count %>&#37;</p>
+          <h4>B Credits</h4>
+          <p><%= Customer.where(credit_grade: 'B').count * 100 / Customer.count %>&#37;</p>
+          <h4>C Credits</h4>
+          <p><%= Customer.where(credit_grade: 'C').count * 100 / Customer.count %>&#37;</p>
+          <h4>Sales This Year</h4>
+          <p><%= Customer.where('extract(year from date_installed) = ?', 2014).count %></p>
+          <h4>Sales This Month</h4>
+          <p><%= Customer.where('extract(month from date_installed) = ?', 12).count %></p>
+        <% end %>
       </div>
     </div>
 
   <% else %>  <!-- if admin logged in -->
+
     <div class="row">
       <div class="small-12 columns">
-        <h1>Office Statistics</h1>
-        <h4>EFT</h4>
-        <p><%= Customer.where(eft: true).count * 100 / Customer.count %>&#37;</p>
-        <h4>60 Month</h4>
-        <p><%= Customer.where(sixty_month: true).count * 100 / Customer.count %>&#37;</p>
-        <h4>Activation</h4>
-        <p><%= Customer.where(activation: true).count * 100 / Customer.count %>&#37;</p>
-        <h4>Takeover</h4>
-        <p><%= Customer.where(takeover: true).count * 100 / Customer.count %>&#37;</p>
-        <h4>Average MMR</h4>
-        <p><%= Customer.average(:mmr).round(2) %></p>
-        <h4>Basic Package</h4>
-        <p><%= Customer.where(package: 'Basic').count * 100 / Customer.count %>&#37;</p>
-        <h4>Basic Image Package</h4>
-        <p><%= Customer.where(package: 'Basic Image').count * 100 / Customer.count %>&#37;</p>
-        <h4>Go Green Package</h4>
-        <p><%= Customer.where(package: 'Go Green').count * 100 / Customer.count %>&#37;</p>
-        <h4>Basic Automation Package</h4>
-        <p><%= Customer.where(package: 'Basic Automation').count * 100 / Customer.count %>&#37;</p>
-        <h4>Automation Plus Package</h4>
-        <p><%= Customer.where(package: 'Automation Plus').count * 100 / Customer.count %>&#37;</p>
-        <h4>Fort Knox Package</h4>
-        <p><%= Customer.where(package: 'Fort Knox').count * 100 / Customer.count %>&#37;</p>
-        <h4>A Credits</h4>
-        <p><%= Customer.where(credit_grade: 'A').count * 100 / Customer.count %>&#37;</p>
-        <h4>B Credits</h4>
-        <p><%= Customer.where(credit_grade: 'B').count * 100 / Customer.count %>&#37;</p>
-        <h4>C Credits</h4>
-        <p><%= Customer.where(credit_grade: 'C').count * 100 / Customer.count %>&#37;</p>
-        <h4>Sales This Year</h4>
-        <p><%= Customer.where('extract(year from date_installed) = ?', 2014).count %></p>
-        <h4>Sales This Month</h4>
-        <p><%= Customer.where('extract(month from date_installed) = ?', 12).count %></p>
-      <% end %>
-    </div>
+        <% if Customer.count > 0 %>
+          <h1>Office Statistics</h1>
+          <h4>EFT</h4>
+          <p><%= Customer.where(eft: true).count * 100 / Customer.count %>&#37;</p>
+          <h4>60 Month</h4>
+          <p><%= Customer.where(sixty_month: true).count * 100 / Customer.count %>&#37;</p>
+          <h4>Activation</h4>
+          <p><%= Customer.where(activation: true).count * 100 / Customer.count %>&#37;</p>
+          <h4>Takeover</h4>
+          <p><%= Customer.where(takeover: true).count * 100 / Customer.count %>&#37;</p>
+          <h4>Average MMR</h4>
+          <p><%= Customer.average(:mmr).round(2) %></p>
+          <h4>Basic Package</h4>
+          <p><%= Customer.where(package: 'Basic').count * 100 / Customer.count %>&#37;</p>
+          <h4>Basic Image Package</h4>
+          <p><%= Customer.where(package: 'Basic Image').count * 100 / Customer.count %>&#37;</p>
+          <h4>Go Green Package</h4>
+          <p><%= Customer.where(package: 'Go Green').count * 100 / Customer.count %>&#37;</p>
+          <h4>Basic Automation Package</h4>
+          <p><%= Customer.where(package: 'Basic Automation').count * 100 / Customer.count %>&#37;</p>
+          <h4>Automation Plus Package</h4>
+          <p><%= Customer.where(package: 'Automation Plus').count * 100 / Customer.count %>&#37;</p>
+          <h4>Fort Knox Package</h4>
+          <p><%= Customer.where(package: 'Fort Knox').count * 100 / Customer.count %>&#37;</p>
+          <h4>A Credits</h4>
+          <p><%= Customer.where(credit_grade: 'A').count * 100 / Customer.count %>&#37;</p>
+          <h4>B Credits</h4>
+          <p><%= Customer.where(credit_grade: 'B').count * 100 / Customer.count %>&#37;</p>
+          <h4>C Credits</h4>
+          <p><%= Customer.where(credit_grade: 'C').count * 100 / Customer.count %>&#37;</p>
+          <h4>Sales This Year</h4>
+          <p><%= Customer.where('extract(year from date_installed) = ?', 2014).count %></p>
+          <h4>Sales This Month</h4>
+          <p><%= Customer.where('extract(month from date_installed) = ?', 12).count %></p>
+        <% end %>
+      </div>
   </div>
 
 <% end %>
