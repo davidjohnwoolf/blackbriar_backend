@@ -1,6 +1,10 @@
 <div class="row">
   <div class="small-12 columns">
-    <h1><%= @customer.name %></h1>
+
+    <h1 class="underline"><%= @customer.name %></h1>
+
+  </div>
+  <div class="small-12 medium-6 columns">
 
     <h4>Address</h4>
     <p><%= @customer.address %> <%= @customer.city %>, <%= @customer.state %> <%= @customer.zip %></p>
@@ -8,23 +12,11 @@
     <h4>Phone</h4>
     <p><%= @customer.phone %></p>
 
-    <h4>Credit Grade</h4>
-    <p><%= @customer.credit_grade %></p>
-
-    <h4>Tech</h4>
-    <p><%= @customer.tech_name %></p>
-
     <h4>Package</h4>
     <p><%= @customer.package %></p>
 
     <h4>MMR</h4>
     <p><%= @customer.mmr %></p>
-
-    <h4>Sold On</h4>
-    <p><%= @customer.date_sold %></p>
-
-    <h4>Installed On</h4>
-    <p><%= @customer.date_installed %></p>
 
     <h4>60 Month</h4>
     <p><%= @customer.sixty_month %></p>
@@ -35,8 +27,23 @@
     <h4>Activation</h4>
     <p><%= @customer.activation %></p>
 
+  </div>
+  <div class="small-12 medium-6 columns">
+
+    <h4>Sold On</h4>
+    <p><%= @customer.date_sold %></p>
+
+    <h4>Installed On</h4>
+    <p><%= @customer.date_installed %></p>
+
+    <h4>Credit Grade</h4>
+    <p><%= @customer.credit_grade %></p>
+
     <h4>Takeover</h4>
     <p><%= @customer.takeover %></p>
+
+    <h4>Tech</h4>
+    <p><%= @customer.tech_name %></p>
 
     <h4>Representative</h4>
     <p><%= User.find(@customer.user_id).name %></p>
