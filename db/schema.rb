@@ -54,7 +54,6 @@ ActiveRecord::Schema.define(version: 20141206082550) do
     t.string   "email",           null: false
     t.string   "password_hash",   null: false
     t.string   "password_salt",   null: false
-    t.integer  "eft_percent"
     t.string   "profile_picture"
     t.datetime "created_at"
     t.datetime "updated_at"
