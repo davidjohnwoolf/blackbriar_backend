@@ -1,7 +1,8 @@
 class CustomersController < ApplicationController
-  before_filter :authenticate_user, only: [:index, :show]
-  before_filter :authenticate_admin, only: [:new, :create, :edit, :update, :destroy]
+  before_action :authenticate_user, only: [:index, :show]
+  before_action :authenticate_admin, only: [:new, :create, :edit, :update, :destroy]
   before_action :find_customer, only: [:show, :edit, :update, :destroy]
+  # after_action :calculate_eft, only: [:create]
 
   def index
     @customers = Customer.all
@@ -55,4 +56,9 @@ class CustomersController < ApplicationController
     :phone, :credit_grade, :tech_name, :package, :mmr, :date_sold,
     :date_installed, :sixty_month, :eft, :activation, :takeover, :user_id)
   end
+
+  # def calculate_eft
+  #   @user = User.find(params[:user_id])
+  #   @user.eft_percent = @user.customers.where(eft: true).count * 100 / @user.customers.count
+  # end
 end

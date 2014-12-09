@@ -1,5 +1,5 @@
 class AdminsController < ApplicationController
-  before_filter :authenticate_admin
+  before_action :authenticate_admin
   before_action :find_admin, only: [:show, :edit, :update, :destroy]
 
   def show
