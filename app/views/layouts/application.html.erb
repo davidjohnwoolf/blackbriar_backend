@@ -45,13 +45,13 @@
     <div class="row">
       <div class="small-12 columns">
         <% if flash[:notice] %>
-          <div class="label success">
+          <div class="label success flash-notice">
             <%= flash[:notice] %>
           </div>
         <% end %>
 
         <% if flash[:alert] %>
-          <div class="label alert">
+          <div class="label alert flash-alert">
             <%= flash[:alert] %>
           </div>
         <% end %>

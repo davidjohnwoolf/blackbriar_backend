@@ -15,4 +15,10 @@
 //= require foundation
 //= require_tree .
 
-$(function(){ $(document).foundation(); });
+$(function(){ $(document).foundation();
+
+  setTimeout(function(){
+    $('.flash-notice').fadeOut();
+  }, 2500);
+
+});
