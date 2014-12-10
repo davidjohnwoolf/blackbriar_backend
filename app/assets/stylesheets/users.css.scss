@@ -3,19 +3,19 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 img {
-  float: left;
-  width: 38%;
+  width: 100%;
   margin-right: 2%;
   margin-top: .5em;
 }
 
 .user-info {
-  float: left;
-  width: 60%;
   color: #555;
 }
 
 .user-info p {
   font-size: 1.3em;
   margin: .2em 0;
+}
+
+section.user-info-container {
 }

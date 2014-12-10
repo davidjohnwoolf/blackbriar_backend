@@ -1,14 +1,14 @@
 <div class="row">
-  <div class="small-12 columns">
+  <div class="small-12 medium-4 columns">
     <%= image_tag @user.profile_picture.url %>
-    <section class="user-info">
-      <h1 class="underline"><%= @user.name %></h1>
-      <p><%= @user.email %></p>
-      <p>801-655-8956</p>
-      <h2 class="underline">Sales</h2>
-      <p>Year: <%= @user.customers.where('extract(year from date_installed) = ?', 2014).count %></p>
-      <p>Month: <%= @user.customers.where('extract(month from date_installed) = ?', 12).count %></p>
-    </section>
+  </div>
+  <div class="small-12 medium-8 columns user-info">
+    <h1 class="underline"><%= @user.name %></h1>
+    <p><%= @user.email %></p>
+    <p>801-655-8956</p>
+    <h2 class="underline">Sales</h2>
+    <p>Year: <%= @user.customers.where('extract(year from date_installed) = ?', 2014).count %></p>
+    <p>Month: <%= @user.customers.where('extract(month from date_installed) = ?', 12).count %></p>
   </div>
   <div class="small-12 medium-6 columns">
 
