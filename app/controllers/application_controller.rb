@@ -18,6 +18,15 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def authenticate_this_user
+    if session[:user_id] == User.find(params[:id]).id || session[:admin_id]
+      return true
+    else
+      flash[:alert] = 'You cannot edit other users accounts'
+      redirect_to root_url
+    end
+  end
+
   def authenticate_admin
     if session[:admin_id]
       return true
