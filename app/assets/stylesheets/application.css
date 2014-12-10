@@ -15,10 +15,14 @@ ul {
   margin-left: 0;
 }
 
+h4 {
+  font-weight: bold;
+}
+
 .underline {
   border-bottom: 2px #999 solid;
 }
 
-h4 {
-  font-weight: bold;
+.italic {
+  font-style: italic;
 }
