@@ -1,10 +1,16 @@
 <div class="row">
   <div class="small-12 columns">
-    <h1 class="underline"><%= @user.name %></h1>
+    <%= image_tag @user.profile_picture.url %>
+    <section class="user-info">
+      <h1 class="underline"><%= @user.name %></h1>
+      <p><%= @user.email %></p>
+      <p>801-655-8956</p>
+      <h2 class="underline">Sales</h2>
+      <p>Year: <%= @user.customers.where('extract(year from date_installed) = ?', 2014).count %></p>
+      <p>Month: <%= @user.customers.where('extract(month from date_installed) = ?', 12).count %></p>
+    </section>
   </div>
   <div class="small-12 medium-6 columns">
-
-    <%= image_tag @user.profile_picture.url, width: '200' %>
 
     <% if @user.customers.count > 0 %>
 
@@ -36,10 +42,6 @@
       <p><%= @user.customers.where(takeover: true).count * 100 / @user.customers.count %>&#37;</p>
       <h4>Average MMR</h4>
       <p><%= @user.customers.average(:mmr).round(2) %></p>
-      <h4>Sales This Year</h4>
-      <p><%= @user.customers.where('extract(year from date_installed) = ?', 2014).count %></p>
-      <h4>Sales This Month</h4>
-      <p><%= @user.customers.where('extract(month from date_installed) = ?', 12).count %></p>
 
     <% end %>
     <% if current_admin %>
