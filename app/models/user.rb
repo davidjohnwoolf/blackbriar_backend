@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
 
   validates :name, presence: true, uniqueness: true
   validates :email, presence: true, uniqueness: true
+  validates :phone, presence: true, format: { with: /\A\d{3}-\d{3}-\d{4}\z/ }
   validates :password, presence: true, confirmation: true
   validates_length_of :password, in: 6..20
 

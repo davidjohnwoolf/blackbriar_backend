@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(version: 20141206082550) do
   create_table "users", force: true do |t|
     t.string   "name",            null: false
     t.string   "email",           null: false
+    t.string   "phone",           null: false
     t.string   "password_hash",   null: false
     t.string   "password_salt",   null: false
     t.string   "profile_picture"
