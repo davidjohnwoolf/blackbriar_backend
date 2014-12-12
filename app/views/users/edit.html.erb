@@ -3,10 +3,12 @@
     <h1 class="underline">Edit User</h1>
 
     <%= form_for @user do |f| %>
-      <div>
-        <%= f.label :name %>
-        <%= f.text_field :name %>
-      </div>
+      <% if current_admin %>
+        <div>
+          <%= f.label :name %>
+          <%= f.text_field :name %>
+        </div>
+      <% end %>
 
       <div>
         <%= f.label :email %>
