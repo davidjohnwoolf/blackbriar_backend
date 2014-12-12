@@ -6,11 +6,11 @@
 
  */
 
- body {
+body {
    color: #999;
  }
 
-input, textarea, select {
+input, textarea, select, label {
   max-width: 30em;
 }
 
