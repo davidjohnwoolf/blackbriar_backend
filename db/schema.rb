@@ -43,10 +43,13 @@ ActiveRecord::Schema.define(version: 20141206082550) do
     t.boolean  "eft",            default: false
     t.boolean  "activation",     default: false
     t.boolean  "takeover",       default: false
+    t.string   "contract_ama"
+    t.string   "contract_sop"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+  add_index "customers", ["name"], name: "index_customers_on_name", using: :btree
   add_index "customers", ["user_id"], name: "index_customers_on_user_id", using: :btree
 
   create_table "users", force: true do |t|

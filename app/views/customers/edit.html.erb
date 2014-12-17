@@ -89,6 +89,16 @@
       </div>
 
       <div>
+        <%= f.label :contract_ama %>
+        <%= f.file_field :contract_ama %>
+      </div>
+
+      <div>
+        <%= f.label :contract_sop %>
+        <%= f.file_field :contract_sop %>
+      </div>
+
+      <div>
         <%= f.label :user_id %>
         <%= f.collection_select :user_id, User.all, :id, :name %>
       </div>

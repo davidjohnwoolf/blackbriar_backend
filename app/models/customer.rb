@@ -14,4 +14,7 @@ class Customer < ActiveRecord::Base
   validates :date_sold, presence: true
   validates :date_installed, presence: true
   validates :user_id, presence: true
+
+  mount_uploader :contract_ama, ContractAmaUploader
+  mount_uploader :contract_sop, ContractSopUploader
 end

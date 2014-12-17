@@ -18,10 +18,13 @@ class CreateCustomers < ActiveRecord::Migration
       t.boolean :eft, default: false
       t.boolean :activation, default: false
       t.boolean :takeover, default: false
+      t.string :contract_ama
+      t.string :contract_sop
 
       t.timestamps
     end
 
+    add_index :customers, :name
     add_index :customers, :user_id
   end
 end
