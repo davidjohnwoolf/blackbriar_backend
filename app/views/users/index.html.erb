@@ -1,8 +1,8 @@
 <div class="row">
   <div class="small-12 columns">
     <h1 class="underline">Users</h1>
-      <% @users.each do |user| %>
-        <h4><%= link_to user.name, user_path(user.id) %></h4>
-      <% end %>
+    <% @users.each do |user| %>
+      <h4><%= link_to user.name, user_path(user.id) %></h4>
+    <% end %>
   </div>
 </div>
