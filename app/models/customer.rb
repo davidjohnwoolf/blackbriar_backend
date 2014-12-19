@@ -1,4 +1,6 @@
 class Customer < ActiveRecord::Base
+  include PgSearch
+
   belongs_to :user
 
   validates :name, presence: true
@@ -17,4 +19,6 @@ class Customer < ActiveRecord::Base
 
   mount_uploader :contract_ama, ContractAmaUploader
   mount_uploader :contract_sop, ContractSopUploader
+
+  pg_search_scope :search_by_name, against: :name
 end

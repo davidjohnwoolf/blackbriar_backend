@@ -12,4 +12,7 @@ Rails.application.routes.draw do
   get '/log_in_admin' => 'admin_sessions#new', as: :log_in_admin
   post '/log_in_admin' => 'admin_sessions#create'
   delete '/log_out_admin' => 'admin_sessions#destroy', as: :log_out_admin
+
+  get '/search_results' => 'search_results#index'
+
 end
