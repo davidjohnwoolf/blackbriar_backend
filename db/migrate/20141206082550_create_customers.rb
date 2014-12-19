@@ -8,7 +8,7 @@ class CreateCustomers < ActiveRecord::Migration
       t.string :state, null: false
       t.string :zip, null: false
       t.string :phone, null: false
-      t.string :credit_grade, null: false
+      t.integer :credit_score, null: false
       t.string :tech_name, null: false
       t.string :package, null: false
       t.decimal :mmr, null: false

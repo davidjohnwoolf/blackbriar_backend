@@ -42,6 +42,8 @@
       <p><%= @user.customers.where(takeover: true).count * 100 / @user.customers.count %>&#37;</p>
       <h4>Average MMR</h4>
       <p><%= @user.customers.average(:mmr).round(2) %></p>
+      <h4>Average Credit</h4>
+      <p>blank</p>
 
     <% end %>
     <% if current_admin %>
