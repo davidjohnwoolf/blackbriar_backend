@@ -18,6 +18,7 @@ class CreateCustomers < ActiveRecord::Migration
       t.boolean :eft, default: false
       t.boolean :activation, default: false
       t.boolean :takeover, default: false
+      t.boolean :canceled, default: false
       t.string :contract_ama
       t.string :contract_sop
 

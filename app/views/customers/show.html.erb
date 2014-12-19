@@ -48,6 +48,9 @@
     <h4>Representative</h4>
     <p><%= User.find(@customer.user_id).name %></p>
 
+    <h4>Canceled</h4>
+    <p><%= @customer.canceled %></p>
+
     <h4>Contracts</h4>
     <%= image_tag @customer.contract_ama.url %>
     <%= image_tag @customer.contract_sop.url %>
