@@ -4,11 +4,9 @@
   <h1 class="underline">Search Results</h1>
 
   <% @results.each do |result| %>
-    <%= link_to result.name, customer_path(result.id) %>
+    <h4><%= link_to result.name, customer_path(result.id) %></h4>
   <% end %>
 
-  <br>
-  
   <%= link_to 'Back to Customers', customers_path %>
 
   </div>
