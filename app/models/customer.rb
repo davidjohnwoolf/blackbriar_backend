@@ -9,7 +9,7 @@ class Customer < ActiveRecord::Base
   validates :state, presence: true
   validates :zip, presence: true, format: { with: /\A\d{5}\z/ }
   validates :phone, presence: true, format: { with: /\A\d{3}-\d{3}-\d{4}\z/ }
-  validates :credit_score, presence: true
+  validates :credit_score, presence: true, format: { with: /\A\d{3}\z/ }
   validates :tech_name, presence: true
   validates :package, presence: true
   validates :mmr, presence: true
