@@ -54,12 +54,26 @@ ActiveRecord::Schema.define(version: 20141206082550) do
   add_index "customers", ["user_id"], name: "index_customers_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
-    t.string   "name",            null: false
-    t.string   "email",           null: false
-    t.string   "phone",           null: false
-    t.string   "password_hash",   null: false
-    t.string   "password_salt",   null: false
+    t.string   "name",                  null: false
+    t.string   "email",                 null: false
+    t.string   "phone",                 null: false
+    t.string   "password_hash",         null: false
+    t.string   "password_salt",         null: false
     t.string   "profile_picture"
+    t.integer  "eft_stat"
+    t.integer  "sixty_month_stat"
+    t.integer  "activation_stat"
+    t.integer  "takeover_stat"
+    t.decimal  "mmr_stat"
+    t.integer  "credit_score_stat"
+    t.integer  "basic_stat"
+    t.integer  "basic_image_stat"
+    t.integer  "go_green_stat"
+    t.integer  "basic_automation_stat"
+    t.integer  "automation_plus_stat"
+    t.integer  "fort_knox_stat"
+    t.integer  "sales_year"
+    t.integer  "sales_month"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
