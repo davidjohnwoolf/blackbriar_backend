@@ -4,6 +4,7 @@ gem 'rails', '4.1.1'
 
 gem 'bcrypt'
 gem 'carrierwave'
+gem 'carrierwave-video'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'foundation-rails'
 gem 'jbuilder', '~> 2.0'
