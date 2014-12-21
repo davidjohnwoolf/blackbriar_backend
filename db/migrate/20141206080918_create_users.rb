@@ -19,6 +19,7 @@ class CreateUsers < ActiveRecord::Migration
       t.integer :basic_automation_stat
       t.integer :automation_plus_stat
       t.integer :fort_knox_stat
+      t.integer :attrition
       t.integer :sales_year
       t.integer :sales_month
 

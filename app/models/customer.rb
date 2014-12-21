@@ -31,6 +31,8 @@ class Customer < ActiveRecord::Base
     user.update_attribute(:activation_stat, activation_stat)
     takeover_stat = user.customers.where(takeover: true).count * 100 / user.customers.count
     user.update_attribute(:takeover_stat, takeover_stat)
+    attrition = user.customers.where(canceled: true).count * 100 / user.customers.count
+    user.update_attribute(:attrition, attrition)
     mmr_stat = user.customers.average(:mmr).round(2)
     user.update_attribute(:mmr_stat, mmr_stat)
     credit_score_stat = user.customers.average(:credit_score).round(2)

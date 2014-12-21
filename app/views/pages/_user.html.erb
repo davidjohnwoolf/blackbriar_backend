@@ -29,6 +29,8 @@
       <p><%= current_user.fort_knox_stat %>&#37;</p>
       <h4>Average Credit</h4>
       <p><%= current_user.credit_score_stat %></p>
+      <h4>Attrition</h4>
+      <p><%= @user.attrition %></p>
       <h4>Sales This Year</h4>
       <p><%= current_user.sales_year %></p>
       <h4>Sales This Month</h4>
@@ -61,7 +63,9 @@
       <h4>Fort Knox Package</h4>
       <p><%= Customer.where(package: 'Fort Knox').count * 100 / Customer.count %>&#37;</p>
       <h4>Average Credit</h4>
-      <p>blank</p>
+      <p><%= Customer.average(:credit_score).round(2) %></p>
+      <h4>Attrition</h4>
+      <p><%= Customer.where(canceled: true).count * 100 / Customer.count %>&#37;</p>
       <h4>Sales This Year</h4>
       <p><%= Customer.where('extract(year from date_installed) = ?', 2014).count %></p>
       <h4>Sales This Month</h4>

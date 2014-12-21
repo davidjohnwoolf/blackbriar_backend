@@ -72,6 +72,7 @@ ActiveRecord::Schema.define(version: 20141206082550) do
     t.integer  "basic_automation_stat"
     t.integer  "automation_plus_stat"
     t.integer  "fort_knox_stat"
+    t.integer  "attrition"
     t.integer  "sales_year"
     t.integer  "sales_month"
     t.datetime "created_at"
