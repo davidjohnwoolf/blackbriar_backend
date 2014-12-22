@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :admins, :only => [:show, :edit, :update]
   resources :customers
   resources :training_videos
+  resources :resources
 
   get '/log_in' => 'user_sessions#new', as: :log_in
   post '/log_in' => 'user_sessions#create'
