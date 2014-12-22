@@ -35,7 +35,7 @@ class Customer < ActiveRecord::Base
     user.update_attribute(:attrition, attrition)
     mmr_stat = user.customers.average(:mmr).round(2)
     user.update_attribute(:mmr_stat, mmr_stat)
-    credit_score_stat = user.customers.average(:credit_score).round(2)
+    credit_score_stat = user.customers.average(:credit_score).round
     user.update_attribute(:credit_score_stat, credit_score_stat)
     basic_stat = user.customers.where(package: 'Basic').count * 100 / user.customers.count
     user.update_attribute(:basic_stat, basic_stat)
