@@ -1,0 +1,12 @@
+<%= content_for :title, "Blackbriar - #{@resource.title}" %>
+
+<div class="row">
+  <div class="small-12 columns">
+    <h1 class="underline"><%= @resource.title %></h1>
+    <%= image_tag @resource.document.url %>
+    <% if current_admin %>
+      <%= link_to 'Delete Training Video', training_video_path(@training_video.id), method: :delete, data: {confirm: 'Are you sure?'}, class: 'button tiny alert'  %>
+      <%= link_to 'Edit Training Video', edit_training_video_path(@training_video.id), class: 'button tiny' %>
+    <% end %>
+  </div>
+</div>

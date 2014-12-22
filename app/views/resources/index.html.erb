@@ -1,0 +1,10 @@
+<%= content_for :title, 'Blackbriar - Resources' %>
+
+<div class="row">
+  <div class="small-12 columns">
+    <h1 class="underline">Resources</h1>
+    <% @resources.each do |resource| %>
+    <h4><%=link_to resource.title, resource_path(resource.id) %></h4>
+    <% end %>
+  </div>
+</div>
