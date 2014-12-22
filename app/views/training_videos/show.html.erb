@@ -6,8 +6,8 @@
     <%= video_tag @training_video.video, :controls => true %>
     <p><%= @training_video.description %></p>
     <% if current_admin %>
-    <%= link_to 'Delete Training Video', training_video_path(@training_video.id), method: :delete, data: {confirm: 'Are you sure?'}, class: 'button tiny alert'  %>
-    <%= link_to 'Edit Training Video', edit_training_video_path(@training_video.id), class: 'button tiny' %>
+      <%= link_to 'Delete Training Video', training_video_path(@training_video.id), method: :delete, data: {confirm: 'Are you sure?'}, class: 'button tiny alert'  %>
+      <%= link_to 'Edit Training Video', edit_training_video_path(@training_video.id), class: 'button tiny' %>
     <% end %>
   </div>
 </div>
