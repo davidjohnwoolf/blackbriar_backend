@@ -27,6 +27,7 @@
             <li><%= link_to 'Profile', user_path(current_user) %></li>
             <li><%= link_to 'Users', users_path %></li>
             <li><%= link_to 'Training Videos', training_videos_path %></li>
+            <li><%= link_to 'Resources', resources_path %></li>
             <li><%= link_to 'Edit Account', edit_user_path(current_user) %></li>
             <li><%= link_to 'Log Out', log_out_path, method: :delete %></li>
           <% elsif current_admin %>
@@ -37,6 +38,8 @@
             <li><%= link_to 'Users', users_path %></li>
             <li><%= link_to 'Training Videos', training_videos_path %></li>
             <li><%= link_to 'Create Training Video', new_training_video_path %></li>
+            <li><%= link_to 'Resources', resources_path %></li>
+            <li><%= link_to 'Create Resource', new_resource_path %></li>
             <li><%= link_to 'Edit Account', edit_admin_path(current_admin) %></li>
             <li><%= link_to 'Log Out', log_out_admin_path, method: :delete %></li>
           <% else %>
