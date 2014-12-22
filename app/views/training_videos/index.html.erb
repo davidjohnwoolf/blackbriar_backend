@@ -1,0 +1,10 @@
+<%= content_for :title, 'Blackbriar - Training Videos' %>
+
+<div class="row">
+  <div class="small-12 columns">
+    <h1 class="underline">Training Videos</h1>
+    <% @training_videos.each do |training_video| %>
+      <h4><%= training_video.title %></h4>
+    <% end %>
+  </div>
+</div>
