@@ -1,13 +1,10 @@
 class ResourcesController < ApplicationController
-  before_action :authenticate_user, only: [:index, :show]
+  before_action :authenticate_user, only: [:index]
   before_action :authenticate_admin, only: [:new, :create, :edit, :update, :destroy]
-  before_action :find_resource, only: [:show, :edit, :update, :destroy]
+  before_action :find_resource, only: [:edit, :update, :destroy]
 
   def index
     @resources = Resource.all
-  end
-
-  def show
   end
 
   def new
