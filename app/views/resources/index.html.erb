@@ -4,7 +4,11 @@
   <div class="small-12 columns">
     <h1 class="underline">Resources</h1>
     <% @resources.each do |resource| %>
-    <h4><%=link_to resource.title, resource_path(resource.id) %></h4>
+      <h4><%= link_to "#{resource.title}", resource.document_url, target: '_blank' %></h4>
+      <% if current_admin %>
+        <%= link_to 'Delete Resource', resource_path(resource.id), method: :delete, data: {confirm: 'Are you sure?'}, class: 'button tiny alert'  %>
+        <%= link_to 'Edit Resource', edit_resource_path(resource.id), class: 'button tiny' %>
+      <% end %>
     <% end %>
   </div>
 </div>
